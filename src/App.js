@@ -1,11 +1,16 @@
-import { Porduct } from "./components/Porduct";
-import data from "./user.json";
+import { Route, Routes } from "react-router-dom";
+import { Cart } from "./components/Cart";
+import { Home } from "./components/Home";
+import { Navbar } from "./components/Navbar";
+
 function App() {
   return (
     <div className="App">
-      {data.data.map((item) => {
-        return <Porduct key={item.id} item={item} />;
-      })}
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }
